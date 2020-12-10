@@ -1,0 +1,442 @@
+$grayDark: #040404 ;
+$grayLight: #131313 ;
+$grayLighter: #282828 ;
+$grayCard: #181818 ;
+
+$grayText: #b3b3b3 ;
+$grayNav: #090909;
+
+$grrenPlay: #1db954;
+
+@font-face {
+  font-family: circular-book;
+  src: url(./Fonts/CircularStd-Book.otf);
+}
+@font-face {
+  font-family: circular-bold;
+  src: url(./Fonts/CircularStd-Bold.otf);
+}
+@font-face {
+  font-family: circular-black;
+  src: url(./Fonts/CircularStd-Black.otf);
+}
+@font-face {
+  font-family: circular-medium;
+  src: url(./Fonts/CircularStd-Medium.otf);
+}
+
+
+.App {
+  height: calc(100vh - 90px);
+  background: $grayLight;
+  display: flex;
+}
+.navBar{
+  width: 290px;
+  height: 100%;
+  background: $grayDark;
+  padding: 10px 10px 0;
+  display: inline-flex;
+  flex-direction: column;
+  .logo {
+    padding: 1.1rem 1.1rem;
+    svg {
+      max-width: 141px;
+      zoom: 1;
+      path {
+        fill: white;
+      }
+    }
+  }
+ ul{
+   margin: 0;
+   margin-top: 7px;
+   padding: 0;
+   a {
+    color: inherit;
+    text-decoration: none;
+    &:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+   li{
+     color: $grayText;
+     list-style-type: none;
+    border-radius: 3.5px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: circular-bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+   
+    svg {
+      margin-right: 15px;
+      margin-left: 5px;
+      zoom: 1.1;
+    }
+    &.active{
+      background: $grayLighter;
+      color: white;
+    }
+    &:hover{
+      color: white;
+    }
+  }
+ }
+ .cookies {
+   font-size: 0.6rem;
+   color: $grayText;
+   text-align: left;
+   margin-top: auto;
+   padding: 1rem;
+   span{
+     display: block;
+     margin-bottom: 8px;
+     font-size: 0.65rem;
+     font-weight: 500;
+
+   }
+ }
+}
+
+.outerWrap {
+  background: $grayDark;
+  height: 100vh;
+  min-height: 100%;
+}
+.musicControls {
+  background: $grayLighter;
+  text-align: center;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+  border-top: 1px solid $grayDark;
+}
+
+.upperNav{
+  background: $grayNav;
+  opacity: 0.8;
+  height: 46px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0.45rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.main {
+  width: 100%;
+  overflow-y: scroll;
+
+  position: relative;
+  .mainContent {
+    color: white;
+    .mainInner {
+      padding: 0 2rem;
+      padding-top: 3.4rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.cardsWrap {
+  font-family: circular-black;
+  padding-bottom: 0.6rem;
+  h2 {
+    margin-bottom: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  .card{
+    margin-right: 1.2rem;
+    background: $grayCard;
+    border-radius: 5px;
+    width: 180px;
+    overflow: hidden;
+    padding: 1rem;
+    box-shadow: 0 10px 30px 0
+       rgba(0,0,0,.3)
+       ,0 1px 2px 0 
+       rgba(0,0,0,.2);
+    transition: all .4s;
+
+    &:hover {
+       background: $grayLighter;
+      .playIcon {
+        opacity: 1;
+        margin-bottom: 0.6rem;
+        transition: all .4s ease-in-out;
+      }
+    }
+    .cardImage {
+      height: 180px;
+      box-shadow: 0 10px 30px 0
+       rgba(0,0,0,.3)
+       ,0 1px 2px 0 
+       rgba(0,0,0,.2);
+       position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .playIcon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      background: $grrenPlay;
+      ;
+      opacity: 0;
+      box-shadow: 0 10px 25px 0
+      rgba(0,0,0,.6)
+      ,0 8px 15px 0 
+      rgba(0,0,0,.5);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 0.0rem;
+      margin-right: 0.6rem;
+      transition: transform 2.01s;
+
+      cursor: pointer;
+      svg {
+        margin: auto;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .cardContent {
+      padding: 0.2rem 0;
+      h3 {
+        margin-bottom: 0;
+        font-weight: 800;
+        font-size: 0.92rem;
+        margin-top: 16px;
+
+      }
+      h5 {
+        font-family: circular-book; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+         display: -webkit-box;
+          -webkit-line-clamp: 2; 
+         -webkit-box-orient: vertical;
+        margin-bottom: 0;
+        margin-top: 8px;
+        font-weight: 10;
+        font-size: 0.86rem;
+        opacity: 0.5;
+      }
+    }
+  }
+  
+  .seeAll {
+    float: right;
+    font-size: 0.7rem;
+    font-family: circular-bold; 
+    color: $grayText;
+  }
+  .cardWrapInner {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0;  
+  }
+ 
+  .subTitle {
+    font-size: 0.9rem;
+    font-family: circular-book; 
+    color: $grayText;
+     margin-top: 0.5rem;
+    margin-bottom: 1.3rem;
+
+  }
+}
+.playlistPageInfo{
+  width: 100%;
+  margin: 0;
+}
+.upperPageInfo {
+  position: relative;  
+  img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+.playlistInfoTexts{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem ;
+    width: 100%;
+  margin-bottom: 2px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(20, 20, 20, 0.8));
+  line-height: 80%;
+
+  h2 {
+    font-size: 6.4rem;
+    font-weight: 900;
+    font-family: circular-black;
+    letter-spacing: -.06em;
+    text-transform: none;
+    line-height: 0;
+    visibility: visible;
+    text-align: left;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    word-spacing: -4px;
+  }
+  h5 {
+    line-height: 0;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 0.9rem;
+    line-height: 0.7rem;
+    font-weight: 400;
+    color: $grayText;
+  }
+}
+.playlistInfoSpotify{
+  display: inline;
+  font-size: 0.9rem;
+  line-height: 0;
+  line-height: 0;
+  font-weight: 400;
+  color: $grayText;
+  a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+  &:hover{
+    text-decoration:underline ;
+  }
+  }
+}
+.downPageView{
+  background: #121212;
+  position: relative;
+  .gradinatDownPage{
+    margin-top: -27px;
+
+    padding: 0;
+    background: rgb(0, 144, 152);
+    height: 330px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0,0,0,.6),#121212);
+  }
+  .pageInfoButtons {
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+    margin-top: 1.4rem;
+    margin-left: 2rem;
+    margin-bottom: 2.5rem;
+
+    flex-direction: row;
+    button {
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+      background: $grrenPlay;
+      color: white;
+      margin-right: 22px;
+      justify-content: center;
+      padding: 0;
+      transition: all .2s;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all .2s ease-in-out;
+      }
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      fill: hsla(0,0%,100%,.7);
+      zoom: 1.1;
+     
+      .iconHeart {
+        padding: 1rem;
+        &:hover {
+          fill: white;
+          transition: all .2s ease-in-out;
+        }
+      }
+      .iconDot {
+        padding: 1rem;
+        &:hover {
+          fill: white;
+          transition: all .2s ease-in-out;
+        }
+      }
+    }
+  }
+  .pageListPlay{
+    position: relative;
+    width: 100%;
+    margin-right: 100px;
+  ul.songlist {
+    padding: 0;
+
+    li {
+      padding: 0.5rem;
+      display: flex;
+      margin: 0.5rem;
+      align-items: center;
+      .songDetail {
+        h3 {
+          margin:0;
+        }
+        span {
+          color: $grayText;
+        }
+      }
+      .songTime {
+        margin-left: auto;
+        padding-right: 3.5rem;
+      }
+      .icon{
+        padding-right: 0.5rem;
+        padding-left: 2.5rem;
+
+        width: 25px;
+        height: 25px;
+      }
+      &:hover {
+        background: rgba($color: #555555, $alpha: 0.7);
+      }
+    }
+  }
+  }
+}
