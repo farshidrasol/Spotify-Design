@@ -432,9 +432,25 @@ $grrenPlay: #1db954;
 
         width: 25px;
         height: 25px;
+        .playIconInner {
+          display: none;
+        }
+        svg {
+          fill: rgba($color: #ffffff, $alpha: 0.7);
+          width: 20px;
+          height: 20px;
+        }
       }
       &:hover {
-        background: rgba($color: #555555, $alpha: 0.7);
+        background: rgba($color: #999999, $alpha: 0.3);
+.icon {
+  .numberInner{
+    display: none;
+  }
+  .playIconInner{
+    display: block;
+  }
+}
       }
     }
   }

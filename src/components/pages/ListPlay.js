@@ -47,7 +47,8 @@ const ListPlay = () => {
                    <ul className="songlist">
                        <li>
                            <div className="icon">
-                                    1   
+                                    <span className="numberInner"> 1 </span>  
+                                    <PlayIcon className="playIconInner"/>
                            </div>
                            <div className="songDetail">
                               <h3>Lexander Hamilton</h3>
@@ -60,7 +61,8 @@ const ListPlay = () => {
                         </li>
                         <li>
                            <div className="icon">
-2
+                           <span className="numberInner"> 2 </span>  
+                                    <PlayIcon className="playIconInner"/>
                            </div>
                            <div className="songDetail">
                               <h3>Lexander Hamilton</h3>
@@ -73,7 +75,8 @@ const ListPlay = () => {
                         </li>
                         <li>
                            <div className="icon">
-3
+                           <span className="numberInner"> 3 </span>  
+                                    <PlayIcon className="playIconInner"/>
                            </div>
                            <div className="songDetail">
                               <h3>Lexander Hamilton</h3>
@@ -86,7 +89,8 @@ const ListPlay = () => {
                         </li>
                         <li>
                            <div className="icon">
-4
+                           <span className="numberInner"> 4 </span>  
+                                    <PlayIcon className="playIconInner"/>
                            </div>
                            <div className="songDetail">
                               <h3>Lexander Hamilton</h3>
@@ -99,7 +103,8 @@ const ListPlay = () => {
                         </li>
                         <li>
                            <div className="icon">
-5
+                           <span className="numberInner"> 5 </span>  
+                                    <PlayIcon className="playIconInner"/>
                            </div>
                            <div className="songDetail">
                               <h3>Lexander Hamilton</h3>
@@ -112,7 +117,8 @@ const ListPlay = () => {
                         </li>
                         <li>
                            <div className="icon">
-6
+                           <span className="numberInner"> 6 </span>  
+                                    <PlayIcon className="playIconInner"/>
                            </div>
                            <div className="songDetail">
                               <h3>Lexander Hamilton</h3>
